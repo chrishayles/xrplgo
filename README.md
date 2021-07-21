@@ -1,1 +1,8 @@
 # xrplgo
+
+Todo:
+
+- Everything.
+
+
+Placeholder.
