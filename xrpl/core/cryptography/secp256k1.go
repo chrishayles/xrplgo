@@ -6,6 +6,19 @@ import (
 	ethSecp256k1 "github.com/ethereum/go-ethereum/crypto/secp256k1"
 )
 
+//Creates new ed25519 key pair with validation
+func newSecp256k1KeyPair(seed []byte, validator bool) (*Secp256k1, error) {
+
+	x := &Secp256k1{
+		seed:      seed,
+		validator: validator,
+	}
+
+	err := x.DeriveKeypair()
+
+	return x, err
+}
+
 type Secp256k1 struct {
 	seed      []byte
 	private   []byte
